@@ -1,22 +1,36 @@
+@font-face {
+  font-family: "Joan";
+  src: url(/Joan-Regular.woff2);
+}
 * {
   padding: 0;
   margin: 0;
 }
 
-@font-face {
-  font-family: "Joan";
-  src: url(/Joan-Regular.woff2);
+html {
+  font-size: 62.5%;
 }
+
 body {
   background-color: #fdfdfd;
   color: #101010;
   font-family: "Joan";
 }
 
-.wrapper {
-  margin: 3vh 2vw;
+.title {
+  font-size: 3rem;
+  margin: 2.5rem;
 }
 
-.title {
-  font-size: 2em;
+.flex-container {
+  display: flex;
+  flex-direction: row;
+  font-size: 1.6em;
+  height: 100%;
+}
+
+.flex-container--left, .flex-container--right {
+  display: flex;
+  flex-direction: column;
+  margin: 0 2.5rem;
 }/*# sourceMappingURL=style.css.map */
