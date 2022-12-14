@@ -92,6 +92,6 @@ a, a:visited {
 }
 
 ::selection {
-    color: transparent;
-    text-shadow: 0 0 5px rgba(0,0,0,0.5);
+    text-shadow: 0px 0px 6px #1010108e;
+    color: $bg-color;
 }
