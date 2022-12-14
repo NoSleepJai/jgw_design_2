@@ -65,6 +65,13 @@ body {
 ul {
     list-style-type: none;
 }
+a, a:visited {
+    &:hover {
+        text-decoration: underline;
+    }
+    text-decoration: none;
+    color: $fg-color;
+}
 .numeral {
     display: inline-block;
     width: 100px;
@@ -85,7 +92,6 @@ ul {
 }
 
 ::selection {
-    text-shadow: 0px 0px 6px #1010108e;
-    
-    color: $bg-color;
+    color: transparent;
+    text-shadow: 0 0 5px rgba(0,0,0,0.5);
 }
