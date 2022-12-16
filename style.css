@@ -13,8 +13,6 @@ html {
 }
 
 body {
-  background-color: #fdfdfd;
-  color: #101010;
   font-family: "Joan", "Times New Roman", Times, serif;
   font-variant-numeric: tabular-nums;
   font-feature-settings: "tnum";
@@ -24,6 +22,16 @@ body {
   width: 90%;
   position: absolute;
   padding: 2rem 3rem;
+}
+
+.day {
+  color: #101010;
+  background-color: #fdfdfd;
+}
+
+.night {
+  color: #fdfdfd;
+  background-color: #101010;
 }
 
 .title {
@@ -51,6 +59,13 @@ body {
   height: 25%;
   display: flex;
   flex-direction: row;
+  align-items: baseline;
+  transition: height 0.5s ease;
+}
+
+button {
+  all: unset;
+  cursor: pointer;
 }
 
 ul {
@@ -59,7 +74,7 @@ ul {
 
 a, a:visited {
   text-decoration: none;
-  color: #101010;
+  color: inherit;
 }
 a:hover, a:visited:hover {
   text-decoration: underline;
@@ -85,11 +100,9 @@ a:hover, a:visited:hover {
 }
 
 ::-moz-selection {
-  color: transparent;
-  text-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+  text-shadow: 0px 0px 3px rgba(253, 253, 253, 0.8);
 }
 
 ::selection {
-  color: transparent;
-  text-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+  text-shadow: 0px 0px 3px rgba(253, 253, 253, 0.8);
 }/*# sourceMappingURL=style.css.map */

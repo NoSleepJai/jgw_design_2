@@ -12,12 +12,11 @@ html {
     height: 100%;
 }
 // Variables
-$bg-color: #fdfdfd;
-$fg-color: #101010;
+$fg-color: #fdfdfd;
+$bg-color: #101010;
 // Begin
 body {
-    background-color: $bg-color;
-    color: $fg-color;
+    // transition: color 1s ease, background-color 1s ease;
     // Font settings
     font-family: "Joan", 'Times New Roman', Times, serif;
     font-variant-numeric: tabular-nums;
@@ -35,10 +34,18 @@ body {
     padding: 2rem 3rem;
 
 }
+.day {
+    color: $bg-color;
+    background-color: $fg-color;
+}
+.night {
+    color: $fg-color;
+    background-color: $bg-color;
+    // transition: color 1s ease, background-color 1s ease;
+}
 .title {
     font-size: 3rem;
     margin: 1.5rem;
-
 }
 .flex-container {
     display: flex;
@@ -61,7 +68,16 @@ body {
     height: 25%;
     display: flex;
     flex-direction: row;
+    align-items: baseline;
+    transition: height .5s ease;
 }
+button {
+    all: unset;
+    cursor: pointer;
+}
+// .flex-container--right .row {
+//     height: inherit;
+// }
 ul {
     list-style-type: none;
 }
@@ -70,7 +86,7 @@ a, a:visited {
         text-decoration: underline;
     }
     text-decoration: none;
-    color: $fg-color;
+    color: inherit;
 }
 .numeral {
     display: inline-block;
@@ -92,6 +108,6 @@ a, a:visited {
 }
 
 ::selection {
-    text-shadow: 0px 0px 6px #1010108e;
-    color: $bg-color;
+    text-shadow: 0px 0px 3px rgba($fg-color, .8);
+    // color: $bg-color;
 }
