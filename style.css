@@ -65,7 +65,7 @@ body {
 
 button {
   all: unset;
-  cursor: pointer;
+  cursor: crosshair;
 }
 
 ul {
@@ -76,8 +76,11 @@ a, a:visited {
   text-decoration: none;
   color: inherit;
 }
-a:hover, a:visited:hover {
-  text-decoration: underline;
+a:hover::before, a:visited:hover::before {
+  content: "(";
+}
+a:hover::after, a:visited:hover::after {
+  content: ")";
 }
 
 .numeral {
@@ -100,9 +103,9 @@ a:hover, a:visited:hover {
 }
 
 ::-moz-selection {
-  text-shadow: 0px 0px 3px rgba(253, 253, 253, 0.8);
+  text-shadow: 0px 0px 6px rgba(253, 253, 253, 0.8);
 }
 
 ::selection {
-  text-shadow: 0px 0px 3px rgba(253, 253, 253, 0.8);
+  text-shadow: 0px 0px 6px rgba(253, 253, 253, 0.8);
 }/*# sourceMappingURL=style.css.map */

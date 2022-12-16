@@ -28,29 +28,19 @@ function updateTheme() {
 }
 var current;
 function revealProject(nth) {
-    let project = document.querySelectorAll(`.flex-container--right .row:nth-of-type(${nth})`);
+    let project = document.querySelector(`.flex-container--right .row:nth-of-type(${nth})`);
     let otherProject = document.querySelectorAll(`.flex-container--right .row:not(:nth-of-type(${nth}))`);
     // console.log(project);
     // console.log(otherProject);
-    if (current == nth && project.item(0).style.height != "25%") {
-        otherProject.forEach(
-            function(e) {
-                e.style.height = "25%";
-            }
-        )
-        project.item(0).style.height = "25%";
-    }
-    else {
-        otherProject.forEach(
-            function(e) {
-                e.style.height = "3.007%";
-            }
-        )
-        project.item(0).style.height = "75%";
+    if (current == nth && project.style.height != "25%") {
+        otherProject.forEach((e) => { e.style.height = "25%"; })
+        project.style.height = "25%";
+    } else {
+        otherProject.forEach((e) => { e.style.height = "3.007%"; })
+        project.style.height = "75%";
     }
 
     current = nth;
-
 }
 
 updateTimeAndDate();
