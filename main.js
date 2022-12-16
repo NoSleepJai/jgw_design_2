@@ -1,9 +1,8 @@
 const timeHTML = document.getElementById("time");
 const dateHTML = document.getElementById("date");
 
-let now = new Date();
-
 function updateTimeAndDate() {
+    let now = new Date();
     timeHTML.innerText = now.toLocaleTimeString('en-US', { 
         timeZone: 'America/New_York',
         hour: '2-digit',
