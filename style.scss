@@ -16,7 +16,7 @@ html {
 }
 // Variables
 $fg-color: #f3f3f3;
-$bg-color: #101010;
+$bg-color: #151515;
 // Begin
 @keyframes blurOpen {
     from { filter: blur(20px); }
@@ -110,10 +110,12 @@ a, a:visited {
 .numeral {
     display: inline-block;
     width: 20%;
+    font-size: 1.4rem;
 }
 
 .text {
     width: 30rem;
+    text-align: justify;
 }
 
 .project-content {
@@ -138,6 +140,6 @@ img {
 }
 
 ::selection {
-    text-shadow: 0px 0px 7px #00000070;
+    text-shadow: 0px 0px 6px #6F8695;
     color: transparent;
 }
