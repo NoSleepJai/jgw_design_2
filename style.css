@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @font-face {
   font-family: "Satoshi";
   src: url(Satoshi-Variable.ttf) format("opentype");
@@ -12,55 +13,45 @@ html {
   height: 100%;
 }
 
-@-webkit-keyframes blurOpen {
-  from {
-    filter: blur(20px);
-  }
-  to {
-    filter: blur(0px);
-  }
-}
-
-@keyframes blurOpen {
-  from {
-    filter: blur(20px);
-  }
-  to {
-    filter: blur(0px);
-  }
-}
 body {
-  font-family: "Satoshi", "Times New Roman", Times, serif;
+  font-family: "Satoshi", Arial, Helvetica, sans-serif;
   font-variant-numeric: tabular-nums;
-  font-variation-settings: "wght" 400;
+  font-variation-settings: "wght" 415;
+  position: absolute;
   height: 100%;
   width: 100%;
-  position: absolute;
   padding: 2rem 3rem;
   box-sizing: border-box;
-  -webkit-animation: blurOpen 0.8s cubic-bezier(0.4, 0, 0.6, 0.95) 0s 1 forwards;
-          animation: blurOpen 0.8s cubic-bezier(0.4, 0, 0.6, 0.95) 0s 1 forwards;
+  -webkit-text-decoration: underline transparent;
+          text-decoration: underline transparent;
+  text-underline-offset: 2px;
+  font-size: 1.6rem;
+  line-height: 1.35;
 }
 
 .day {
-  color: #151515;
-  background-color: #f3f3f3;
+  --fg-color-css: #151515;
+  --bg-color-css: #f3f3f3;
+  color: var(--fg-color-css);
+  background-color: var(--bg-color-css);
 }
 
 .night {
-  color: #f3f3f3;
-  background-color: #151515;
+  --fg-color-css: #f3f3f3;
+  --bg-color-css: #151515;
+  color: var(--fg-color-css);
+  background-color: var(--bg-color-css);
 }
 
 .title {
   font-size: 3rem;
   margin: 1.5rem;
+  text-transform: uppercase;
 }
 
 .flex-container {
   display: flex;
   flex-direction: row;
-  font-size: 1.8rem;
   height: 85%;
   margin: 1.5rem;
   justify-content: space-between;
@@ -91,30 +82,29 @@ button {
   cursor: crosshair;
 }
 
+.numeral {
+  display: inline-block;
+  width: 20%;
+  font-size: 1.4rem;
+  opacity: 25%;
+}
+
+.text {
+  width: 30rem;
+}
+
 ul {
   list-style-type: none;
 }
 
 a, a:visited {
-  text-decoration: none;
+  -webkit-text-decoration: none transparent;
+          text-decoration: none transparent;
   color: inherit;
 }
-a:hover::before, a:visited:hover::before {
-  content: "(";
-}
 a:hover::after, a:visited:hover::after {
-  content: ")";
-}
-
-.numeral {
-  display: inline-block;
-  width: 20%;
-  font-size: 1.4rem;
-}
-
-.text {
-  width: 30rem;
-  text-align: justify;
+  content: " ↗";
+  font-size: 1.2rem;
 }
 
 .project-content {
@@ -133,7 +123,7 @@ img {
 }
 
 .footer {
-  font-size: 1.8em;
+  font-size: 1.6rem;
   display: flex;
   margin: 1.5rem;
   justify-content: space-between;
@@ -141,11 +131,10 @@ img {
 }
 
 ::-moz-selection {
-  text-shadow: 0px 0px 6px #6F8695;
-  color: transparent;
+  text-decoration: underline var(--fg-color-css);
 }
 
 ::selection {
-  text-shadow: 0px 0px 6px #6F8695;
-  color: transparent;
+  -webkit-text-decoration: underline var(--fg-color-css);
+          text-decoration: underline var(--fg-color-css);
 }/*# sourceMappingURL=style.css.map */

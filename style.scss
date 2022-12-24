@@ -1,5 +1,4 @@
 // Setup
-
 @font-face {
     font-family: "Satoshi";
     src: url(Satoshi-Variable.ttf) format("opentype");
@@ -14,51 +13,60 @@ html {
     font-size: 62.5%;
     height: 100%;
 }
-// Variables
-$fg-color: #f3f3f3;
-$bg-color: #151515;
-// Begin
-@keyframes blurOpen {
-    from { filter: blur(20px); }
-    to { filter: blur(0px); }
-}
 
+
+// Variables
+$bg-color: #f3f3f3;
+$fg-color: #151515;
+
+
+// Begin
 body {
     // transition: color 1s ease, background-color 1s ease;
     // Font settings
-    font-family: "Satoshi", 'Times New Roman', Times, serif;
+    font-family: "Satoshi", Arial, Helvetica, sans-serif;
     font-variant-numeric: tabular-nums;
-    font-variation-settings: "wght" 400;
-    // letter-spacing: 1px;
+    font-variation-settings: "wght" 415;
     ///////////////
+    position: absolute; 
     height: 100%;
     width: 100%;
-    position: absolute; 
+    
+    
     padding: 2rem 3rem;
     box-sizing: border-box;
-    animation: blurOpen .8s cubic-bezier(0.4, 0, 0.6, 0.95) 0s 1 forwards;
+    
+    text-decoration: underline transparent;
+    text-underline-offset: 2px;
+    
+    font-size: 1.6rem;
+    line-height: 1.35;
 }
 
 .day {
-    color: $bg-color;
-    background-color: $fg-color;
+    --fg-color-css: #{$fg-color};
+    --bg-color-css: #{$bg-color};
+    color: var(--fg-color-css); 
+    background-color: var(--bg-color-css);
 }
 
 .night {
-    color: $fg-color;
-    background-color: $bg-color;
-    // transition: color 1s ease, background-color 1s ease;
+    --fg-color-css: #{$bg-color};
+    --bg-color-css: #{$fg-color};
+    color: var(--fg-color-css); 
+    background-color: var(--bg-color-css);
 }
 
 .title {
     font-size: 3rem;
     margin: 1.5rem;
+    text-transform: uppercase;
 }
 
 .flex-container {
     display: flex;
     flex-direction: row;
-    font-size: 1.8rem;
+    
     height: 85%;
     margin: 1.5rem;
     justify-content: space-between;
@@ -79,6 +87,7 @@ body {
     align-items: baseline;
     transition: height .5s ease;
     overflow: hidden;
+    
 }
 
 .row__vertical {
@@ -92,30 +101,31 @@ button {
 // .flex-container--right .row {
 //     height: inherit;
 // }
-ul {
-    list-style-type: none;
-}
-
-a, a:visited {
-    &:hover::before {
-        content: "(";
-    }
-    &:hover::after {
-        content: ")";
-    }
-    text-decoration: none;
-    color: inherit;
-}
 
 .numeral {
     display: inline-block;
     width: 20%;
     font-size: 1.4rem;
+    opacity: 25%;
 }
 
 .text {
     width: 30rem;
-    text-align: justify;
+    // text-align: justify;
+}
+
+ul {
+    list-style-type: none;
+}
+
+a, a:visited {
+    &:hover::after {
+        content: " \2197";
+        // vertical-align: super;
+        font-size: 1.2rem;
+    }
+    text-decoration: none transparent; 
+    color: inherit;
 }
 
 .project-content {
@@ -132,7 +142,7 @@ img {
 }
 
 .footer {
-    font-size: 1.8em;
+    font-size: 1.6rem;
     display: flex;
     margin: 1.5rem;
     justify-content: space-between;
@@ -140,6 +150,5 @@ img {
 }
 
 ::selection {
-    text-shadow: 0px 0px 6px #6F8695;
-    color: transparent;
+    text-decoration: underline var(--fg-color-css);
 }

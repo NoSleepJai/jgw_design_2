@@ -45,7 +45,7 @@ function revealProject(nth) {
         // project.innerHTML = "(" + project.innerHTML + ")";
         projectContent.style.opacity = "0%";
     } else {
-        otherProject.forEach((e) => { e.style.height = "3.007%"; })
+        otherProject.forEach((e) => { e.style.height = "21.6px"; })
         otherProjectContent.forEach((e) => { e.style.opacity = "0%"; })
         project.style.height = "75%";
         projectContent.style.opacity = "100%";
