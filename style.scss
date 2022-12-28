@@ -70,11 +70,11 @@ body {
     margin: 1.5rem;
 }
 
-.flex-container--left, .flex-container--right {
+.flex-container--one, .flex-container--two, .flex-container--three {
     display: flex;
     flex-direction: column;
 
-    width: 47%;
+    width: 30%;
     height: auto; 
 }
 
@@ -83,9 +83,14 @@ body {
     display: flex;
     flex-direction: row;
     align-items: baseline;
-    transition: height .5s ease;
+    // transition: height .16s ease;
     overflow: hidden;
     
+}
+
+.project-content {
+    opacity: 0;
+    // transition: opacity .5s ease;    
 }
 
 .row__vertical {
@@ -105,8 +110,8 @@ button {
 }
 
 .text {
-    width: 30rem;
-    text-align: justify;
+    width: 80%;
+    // text-align: justify;
 }
 
 ul {
@@ -128,17 +133,13 @@ a, a:visited {
     color: inherit;
 }
 
-.project-content {
-    opacity: 0;
-    transition: opacity .5s ease;    
-}
+
 
 img {
     user-select: none;
     pointer-events: none;
     margin-top: 1%;
-    border-radius: .5vmin;
-    // box-shadow: 0px 0px 20px #00000042;
+    border-radius: 1vmin;
 }
 
 .footer {

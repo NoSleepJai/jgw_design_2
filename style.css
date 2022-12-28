@@ -57,10 +57,10 @@ body {
   margin: 1.5rem;
 }
 
-.flex-container--left, .flex-container--right {
+.flex-container--one, .flex-container--two, .flex-container--three {
   display: flex;
   flex-direction: column;
-  width: 47%;
+  width: 30%;
   height: auto;
 }
 
@@ -69,8 +69,11 @@ body {
   display: flex;
   flex-direction: row;
   align-items: baseline;
-  transition: height 0.5s ease;
   overflow: hidden;
+}
+
+.project-content {
+  opacity: 0;
 }
 
 .row__vertical {
@@ -90,8 +93,7 @@ button {
 }
 
 .text {
-  width: 30rem;
-  text-align: justify;
+  width: 80%;
 }
 
 ul {
@@ -114,11 +116,6 @@ a:hover::after, a:visited:hover::after {
   transition: opacity 0.5s ease;
 }
 
-.project-content {
-  opacity: 0;
-  transition: opacity 0.5s ease;
-}
-
 img {
   -webkit-user-select: none;
      -moz-user-select: none;
@@ -126,7 +123,7 @@ img {
           user-select: none;
   pointer-events: none;
   margin-top: 1%;
-  border-radius: 0.5vmin;
+  border-radius: 1vmin;
 }
 
 .footer {

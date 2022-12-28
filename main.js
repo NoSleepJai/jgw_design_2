@@ -26,11 +26,11 @@ function updateTheme() {
 
 
 var current;
-function revealProject(nth) {
-    let project = document.querySelector(`.flex-container--right .row:nth-of-type(${nth})`);
-    let projectContent = document.querySelector(`.flex-container--right .row:nth-of-type(${nth}) .project-content`);
-    let otherProject = document.querySelectorAll(`.flex-container--right .row:not(:nth-of-type(${nth}))`);
-    let otherProjectContent = document.querySelectorAll(`.flex-container--right .row:not(:nth-of-type(${nth})) .project-content`);
+function revealProject(nth, div) {
+    let project = document.querySelector(`.flex-container--${div} .row:nth-of-type(${nth})`);
+    let projectContent = document.querySelector(`.flex-container--${div} .row:nth-of-type(${nth}) .project-content`);
+    let otherProject = document.querySelectorAll(`.flex-container--${div} .row:not(:nth-of-type(${nth}))`);
+    let otherProjectContent = document.querySelectorAll(`.flex-container--${div} .row:not(:nth-of-type(${nth})) .project-content`);
 
     // check if project is already opened if it is collapse back to the original layout
     if (current == nth && project.style.height != "25%") {
