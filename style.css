@@ -52,9 +52,9 @@ body {
 .flex-container {
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
   height: 85%;
   margin: 1.5rem;
-  justify-content: space-between;
 }
 
 .flex-container--left, .flex-container--right {
@@ -91,6 +91,7 @@ button {
 
 .text {
   width: 30rem;
+  text-align: justify;
 }
 
 ul {
@@ -102,9 +103,15 @@ a, a:visited {
           text-decoration: none transparent;
   color: inherit;
 }
-a:hover::after, a:visited:hover::after {
+a::after, a:visited::after {
   content: " ↗";
   font-size: 1.2rem;
+  opacity: 0%;
+  transition: opacity 0.5s ease;
+}
+a:hover::after, a:visited:hover::after {
+  opacity: 100%;
+  transition: opacity 0.5s ease;
 }
 
 .project-content {
@@ -124,10 +131,16 @@ img {
 
 .footer {
   font-size: 1.6rem;
-  display: flex;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
   margin: 1.5rem;
-  justify-content: space-between;
   bottom: 0;
+  transition: opacity 0.5s ease;
+  opacity: 25%;
+}
+.footer:hover {
+  opacity: 100;
 }
 
 ::-moz-selection {

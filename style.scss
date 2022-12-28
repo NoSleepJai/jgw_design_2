@@ -22,16 +22,14 @@ $fg-color: #151515;
 
 // Begin
 body {
-    // transition: color 1s ease, background-color 1s ease;
     // Font settings
     font-family: "Satoshi", Arial, Helvetica, sans-serif;
     font-variant-numeric: tabular-nums;
     font-variation-settings: "wght" 415;
-    ///////////////
+
     position: absolute; 
     height: 100%;
     width: 100%;
-    
     
     padding: 2rem 3rem;
     box-sizing: border-box;
@@ -66,16 +64,16 @@ body {
 .flex-container {
     display: flex;
     flex-direction: row;
+    justify-content: space-between;
     
     height: 85%;
     margin: 1.5rem;
-    justify-content: space-between;
 }
 
 .flex-container--left, .flex-container--right {
     display: flex;
     flex-direction: column;
-    // justify-content: space-between;
+
     width: 47%;
     height: auto; 
 }
@@ -98,9 +96,6 @@ button {
     all: unset;
     cursor: crosshair;
 }
-// .flex-container--right .row {
-//     height: inherit;
-// }
 
 .numeral {
     display: inline-block;
@@ -111,7 +106,7 @@ button {
 
 .text {
     width: 30rem;
-    // text-align: justify;
+    text-align: justify;
 }
 
 ul {
@@ -119,10 +114,15 @@ ul {
 }
 
 a, a:visited {
-    &:hover::after {
+    &::after {
         content: " \2197";
-        // vertical-align: super;
         font-size: 1.2rem;
+        opacity: 0%;
+        transition: opacity .5s ease;
+    }
+    &:hover::after {
+        opacity: 100%;
+        transition: opacity .5s ease;
     }
     text-decoration: none transparent; 
     color: inherit;
@@ -142,11 +142,13 @@ img {
 }
 
 .footer {
+    &:hover { opacity: 100; }
     font-size: 1.6rem;
-    display: flex;
+    width: fit-content;
     margin: 1.5rem;
-    justify-content: space-between;
     bottom: 0;
+    transition: opacity .5s ease;
+    opacity: 25%;
 }
 
 ::selection {

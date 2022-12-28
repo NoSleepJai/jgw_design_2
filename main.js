@@ -3,17 +3,11 @@ const dateHTML = document.getElementById("date");
 
 
 
-function updateTimeAndDate() {
+function updateTime() {
     let now = new Date();
-    timeHTML.innerText = now.toLocaleTimeString('en-US', { 
-        timeZone: 'America/New_York',
-        hour: '2-digit',
-        minute: '2-digit'
-    }).toLowerCase().replace(':', ' ') + " EST";
-    
-    dateHTML.innerText = now.toLocaleDateString('en-US', { 
+    timeHTML.innerText = now.toString('en-US', { 
         timeZone: 'America/New_York'
-    }).toLowerCase().replace(/\//g, ' ');
+    }).toString().replace("(Eastern Standard Time)", "");
 }
 
 
@@ -57,11 +51,11 @@ function revealProject(nth) {
 
 
 
-updateTimeAndDate();
+updateTime();
 updateTheme();
 
 
 setInterval(function() {
-    updateTimeAndDate();
+    updateTime();
 }, 1000);
 
