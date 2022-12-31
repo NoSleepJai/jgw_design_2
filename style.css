@@ -27,6 +27,7 @@ body {
   text-underline-offset: 2px;
   font-size: 1.6rem;
   line-height: 1.35;
+  cursor: default;
 }
 
 .day {
@@ -57,7 +58,7 @@ body {
   margin: 1.5rem;
 }
 
-.flex-container--one, .flex-container--two, .flex-container--three {
+.column-one, .column-two, .column-three {
   display: flex;
   flex-direction: column;
   width: 30%;
@@ -65,15 +66,35 @@ body {
 }
 
 .row {
-  height: 25%;
   display: flex;
   flex-direction: row;
   align-items: baseline;
   overflow: hidden;
 }
 
-.project-content {
+.column-one .row {
+  height: 25%;
+}
+
+.row[data-status=neutral] {
+  height: 25%;
+}
+.row[data-status=neutral] .project-content {
   opacity: 0;
+}
+
+.row[data-status=collapsed] {
+  height: 21.6px;
+}
+.row[data-status=collapsed] .project-content {
+  opacity: 0;
+}
+
+.row[data-status=open] {
+  height: 75%;
+}
+.row[data-status=open] .project-content {
+  opacity: 1;
 }
 
 .row__vertical {

@@ -39,6 +39,8 @@ body {
     
     font-size: 1.6rem;
     line-height: 1.35;
+
+    cursor: default;
 }
 
 .day {
@@ -70,7 +72,7 @@ body {
     margin: 1.5rem;
 }
 
-.flex-container--one, .flex-container--two, .flex-container--three {
+.column-one, .column-two, .column-three {
     display: flex;
     flex-direction: column;
 
@@ -79,7 +81,7 @@ body {
 }
 
 .row {
-    height: 25%;
+    // height: 25%;
     display: flex;
     flex-direction: row;
     align-items: baseline;
@@ -87,10 +89,21 @@ body {
     overflow: hidden;
     
 }
+.column-one .row {
+    height: 25%;
+}
 
-.project-content {
-    opacity: 0;
-    // transition: opacity .5s ease;    
+.row[data-status="neutral"] {
+    & .project-content { opacity: 0; }
+    height: 25%;
+}
+.row[data-status="collapsed"] {
+    & .project-content { opacity: 0; }
+    height: 21.6px;
+}
+.row[data-status="open"] {
+    & .project-content { opacity: 1; }
+    height: 75%;
 }
 
 .row__vertical {
