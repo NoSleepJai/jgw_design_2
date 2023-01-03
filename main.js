@@ -1,11 +1,7 @@
-const timeHTML = document.getElementById("time");
-const dateHTML = document.getElementById("date");
+// const timeHTML = document.getElementById("time");
+// const dateHTML = document.getElementById("date");
 
-const bothColumns = document.querySelectorAll(".row[data-status]");
-const secondColumn = document.querySelectorAll(".row[data-status]");
-const thirdColumn = document.querySelectorAll(".row[data-status]");
-
-
+const allColumns = document.querySelectorAll(".row[data-status]");
 
 function updateTime() {
     let now = new Date();
@@ -24,28 +20,49 @@ function updateTheme() {
         document.body.classList.remove("night");
     }
 }
-var previousRow;
 
-bothColumns.forEach((row) => {
-    row.addEventListener("click", () => {
-        // if(row.getAttribute('data-status') == 'collapsed') {
-        //     row.setAttribute('data-status', 'open');
-        // } 
-        // else if(row.getAttribute('data-status') == 'open'){
-        //     row.setAttribute('data-status', 'neutral');
-        // }
-        // else {
-        //     row.setAttribute('data-status', 'open');
-        // }
-        previousRow = row;
-        console.log(previousRow);
-    })
-})
+for (const row of allColumns.keys()) {
+    allColumns[row].addEventListener("click", () => {
+        if (row % 3 == 0) {
+            if(allColumns[row].getAttribute('data-status') == 'open') {
+                allColumns[row].setAttribute('data-status', 'neutral');
+                allColumns[row + 1].setAttribute('data-status', 'neutral');
+                allColumns[row + 2].setAttribute('data-status', 'neutral');
+            } else {
+                allColumns[row].setAttribute('data-status', 'open');
+                allColumns[row + 1].setAttribute('data-status', 'collapsed');
+                allColumns[row + 2].setAttribute('data-status', 'collapsed');
+            }
+        }
+        else if (row % 3 == 1) {
+            if(allColumns[row].getAttribute('data-status') == 'open') {
+                allColumns[row].setAttribute('data-status', 'neutral');
+                allColumns[row - 1].setAttribute('data-status', 'neutral');
+                allColumns[row + 1].setAttribute('data-status', 'neutral');
+            } else {
+                allColumns[row].setAttribute('data-status', 'open');
+                allColumns[row - 1].setAttribute('data-status', 'collapsed');
+                allColumns[row + 1].setAttribute('data-status', 'collapsed');
+            }
+        }
+        else {
+            if(allColumns[row].getAttribute('data-status') == 'open') {
+                allColumns[row].setAttribute('data-status', 'neutral');
+                allColumns[row - 1].setAttribute('data-status', 'neutral');
+                allColumns[row - 2].setAttribute('data-status', 'neutral');
+            } else {
+                allColumns[row].setAttribute('data-status', 'open');
+                allColumns[row - 1].setAttribute('data-status', 'collapsed');
+                allColumns[row - 2].setAttribute('data-status', 'collapsed'); 
+            }
+        }
+    });
+}
 
 
 
-updateTime();
-updateTheme();
-
-setInterval(updateTime, 1000);
+// updateTime();
+// updateTheme();
+console.info("Created by Jai Grant-Williams\nhttps://jgw.design")
+// setInterval(updateTime, 1000);
 
