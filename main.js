@@ -2,6 +2,7 @@
 // const dateHTML = document.getElementById("date");
 
 const allColumns = document.querySelectorAll(".row[data-status]");
+const archiveImages = document.querySelector("#archive");
 
 function updateTime() {
     let now = new Date();
@@ -13,11 +14,10 @@ function updateTime() {
 function updateTheme() {
     let now = new Date();
     if (now.getHours() >= 18 || now.getHours() < 7) {
-        document.body.classList.add("night");
-        document.body.classList.remove("day");
+        document.body.setAttribute("data-theme", "night");
+
     } else {
-        document.body.classList.add("day");
-        document.body.classList.remove("night");
+        document.body.setAttribute("data-theme", "day");
     }
 }
 
@@ -58,11 +58,15 @@ for (const row of allColumns.keys()) {
         }
     });
 }
-
-
+let imageIndex = 1;
+function cycleImages() {
+    imageIndex = imageIndex > 3 ? imageIndex = 1 : imageIndex;
+    archiveImages.src=`/images/theArchive/${imageIndex}.png`
+    imageIndex++;
+}
 
 // updateTime();
 // updateTheme();
 console.info("Created by Jai Grant-Williams\nhttps://jgw.design")
-// setInterval(updateTime, 1000);
+// setInterval(cycleImages, 700);
 
